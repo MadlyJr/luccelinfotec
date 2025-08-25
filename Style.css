@@ -2,7 +2,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(rgba(95, 130, 247, 0.25), rgba(0, 0, 0, 0.85)),
-              url('../assets/bg.png') no-repeat center center fixed;
+              url('assets/bg.png') no-repeat center center fixed;
   background-size: cover;
   color: #f5f5f5;
   margin: 0;
@@ -118,4 +118,5 @@ footer {
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
+
 .floating-whatsapp i { color: #000; font-size: 1.8rem; }
