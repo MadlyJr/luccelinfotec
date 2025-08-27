@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8"/>
@@ -5,16 +6,137 @@
   <meta name="description" content="Assistência Técnica em Informática Especializada em Performance Gamer.">
   <meta name="keywords" content="assistência técnica, gamer, manutenção de computadores, Luccel Infotec, suporte técnico">
   <meta name="author" content="Luccel Infotec">
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <title>Luccel Infotec</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="Style.css">
-  <title>Luccel Infotec</title>
+
+  <style>
+    /* -------- RESET E BASE -------- */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      transition: background 0.5s, color 0.5s;
+    }
+    a {text-decoration: none; color: inherit;}
+    img {max-width: 100%;}
+
+    /* -------- HEADER -------- */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 8%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {height: 55px;}
+    nav a {
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {color: #0077ff;}
+
+    /* -------- HERO -------- */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 8%;
+      background: linear-gradient(120deg, #0077ff, #00bcd4);
+      color: #fff;
+      gap: 40px;
+    }
+    .hero-text h2 {font-size: 2.2rem; margin-bottom: 10px;}
+    .hero-text p {font-size: 1.1rem; margin-bottom: 15px;}
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.3s;
+    }
+    .btn-whatsapp:hover {background: #1ebe5d;}
+
+    /* -------- SERVIÇOS -------- */
+    .section {padding: 50px 8%; text-align: center;}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {transform: translateY(-5px); background: rgba(255,255,255,1);}
+    .card i {font-size: 2rem; color: #0077ff; margin-bottom: 10px;}
+
+    /* -------- CONTATO -------- */
+    .socials {margin-top: 15px;}
+    .socials a {
+      font-size: 2rem;
+      margin: 0 10px;
+      transition: transform 0.3s;
+    }
+    .socials a:hover {transform: scale(1.2);}
+
+    /* -------- AVALIAÇÃO -------- */
+    .qr img {width: 120px; margin-top: 10px;}
+    .reviews {margin-top: 15px;}
+    .reviews p {margin: 5px 0;}
+
+    /* -------- RODAPÉ -------- */
+    footer {
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+
+    /* -------- BOTÃO FLUTUANTE WHATSAPP -------- */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .floating-whatsapp:hover {transform: scale(1.1);}
+
+    /* -------- DARK MODE -------- */
+    body.dark {
+      background: #0a0a0a;
+      color: #e0e0e0;
+    }
+    body.dark .header {background: rgba(10, 10, 10, 0.85);}
+    body.dark .card {background: rgba(20, 20, 20, 0.8);}
+    body.dark footer {background: rgba(20, 20, 20, 0.85);}
+  </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
   <header class="header">
-    <img src="assets/logo.png" alt="Logo Luccel Infotec" class="logo" />
+    <img src="logo.png" alt="Logo Luccel Infotec" class="logo" />
     <nav>
       <a href="#servicos">Serviços</a>
       <a href="#contato">Contato</a>
@@ -22,7 +144,6 @@
     </nav>
   </header>
 
-  <!-- Sessão Hero com Merchandising -->
   <section class="hero">
     <div class="hero-text">
       <h2>Assistência Técnica de Informática Especializada</h2>
@@ -32,11 +153,10 @@
       </a>
     </div>
     <div class="hero-image">
-      <img src="assets/merchan1.gif" alt="Promoções de Serviços" />
+      <img src="merchan1.gif" alt="Promoções de Serviços" />
     </div>
   </section>
 
-  <!-- Blocos de Serviços -->
   <section class="section" id="servicos">
     <h3>Nossos Serviços</h3>
     <div class="cards">
@@ -48,42 +168,45 @@
     </div>
   </section>
 
-  <!-- Contato -->
   <section class="section" id="contato">
     <h3>Siga!</h3>
-    <p>Acompanhe novidades nas nossas redes!:</p>
+    <p>Acompanhe novidades nas nossas redes:</p>
     <div class="socials">
       <a href="https://www.instagram.com/lcclinfotec" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://wa.me/5551997909919" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.tiktok.com/@lcclinfotec?lang=en" target="_blank"><i class="fab tiktok"></i></a>
+      <a href="https://www.tiktok.com/@lcclinfotec?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
   </section>
 
-  <!-- Avaliações -->
   <section class="section" id="avaliacao">
     <h3>Avalie Nosso Atendimento</h3>
     <p>Clique no QR Code e deixe sua avaliação no Google:</p>
     <div class="qr">
       <a href="https://g.page/r/CVB2fja9AgOqEAE/review" target="_blank">
-        <img src="assets/gqr.png" alt="QR Code de Avaliação" />
+        <img src="gqr.png" alt="QR Code de Avaliação" />
       </a>
     </div>
     <div class="reviews">
-      <p>⭐⭐⭐⭐⭐  
-          
-      <p> “Excelente atendimento, resolveu meu problema no mesmo dia!”</p>
-      <p> “Serviço impecável, recomendo muito!”</p>
-      <p> “Serviço de ótima qualidade!”</p>
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>“Excelente atendimento, resolveu meu problema no mesmo dia!”</p>
+      <p>“Serviço impecável, recomendo muito!”</p>
+      <p>“Serviço de ótima qualidade!”</p>
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer>
     <p>&copy; 2025 Luccel Infotec - Todos os Direitos Reservados</p> 
   </footer>
 
-  <!-- WhatsApp Flutuante -->
   <a class="floating-whatsapp" href="https://wa.me/5551997909919" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <script>
+    const hour = new Date().getHours();
+    if (hour >= 18 || hour < 6) {
+      document.body.classList.add('dark');
+    }
+  </script>
 </body>
 </html>
