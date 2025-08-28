@@ -17,7 +17,7 @@
       font-family: 'Orbitron', sans-serif;
       background: #f5f5f5;
       color: #222;
-      transition: background 0.5s, color 0.5s;
+      transition: ('bg.png') 0.5s, color 0.5s;
     }
     a {text-decoration: none; color: inherit;}
     img {max-width: 100%;}
@@ -46,14 +46,15 @@
 
     /* -------- HERO -------- */
     .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 60px 8%;
-      background: linear-gradient(120deg, #0077ff, #00bcd4);
-      color: #fff;
-      gap: 40px;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 8%;
+  background: url('bg.png') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  gap: 40px;
+          }
     .hero-text h2 {font-size: 2.2rem; margin-bottom: 10px;}
     .hero-text p {font-size: 1.1rem; margin-bottom: 15px;}
     .btn-whatsapp {
@@ -180,7 +181,7 @@
 
   <section class="section" id="avaliacao">
     <h3>Avalie Nosso Atendimento</h3>
-    <p>Clique no QR Code e deixe sua avaliação no Google:</p>
+    <p>Clique no QR Code e deixe sua avaliação no nosso perfil Google!:</p>
     <div class="qr">
       <a href="https://g.page/r/CVB2fja9AgOqEAE/review" target="_blank">
         <img src="gqr.png" alt="QR Code de Avaliação" />
