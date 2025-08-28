@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <style>
+    /* -------- RESET E BASE -------- */
     * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
       font-family: 'Orbitron', sans-serif;
@@ -21,7 +22,7 @@
     a {text-decoration: none; color: inherit;}
     img {max-width: 100%;}
 
-    /* HEADER */
+    /* -------- HEADER -------- */
     .header {
       display: flex;
       justify-content: space-between;
@@ -33,47 +34,36 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      transition: background 0.5s;
-    }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
     }
     .logo {height: 55px;}
-    .header-title {max-width: 400px;}
-    .header-title h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #222;
-      transition: color 0.5s;
-    }
-
     nav a {
-      margin: 0 15px;
+      margin: 0 10px; /* Reduzi um pouco a margem */
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.9rem; /* Reduzi o tamanho da fonte */
       transition: color 0.3s;
     }
     nav a:hover {color: #0077ff;}
 
-    /* HERO */
+    /* -------- HERO -------- */
     .hero {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column; /* Colunas para mobile */
+      justify-content: center;
       align-items: center;
-      padding: 60px 8%;
+      text-align: center;
+      padding: 40px 8%; /* Reduzi o padding */
       background: url('bg.png') no-repeat center center;
       background-size: cover;
       color: #fff;
-      gap: 40px;
-      transition: color 0.5s;
+      gap: 30px; /* Reduzi o gap */
+    }
+    .hero-text h2 {
+      font-size: 1.8rem; /* Reduzi para caber melhor */
+      margin-bottom: 8px;
     }
     .hero-text p {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      max-width: 500px;
-      margin-bottom: 15px;
+      font-size: 1rem; /* Reduzi para caber melhor */
+      margin-bottom: 12px;
     }
     .btn-whatsapp {
       background: #25D366;
@@ -88,50 +78,117 @@
     }
     .btn-whatsapp:hover {background: #1ebe5d;}
 
-    /* DARK MODE */
+    /* -------- SEÇÕES GERAIS -------- */
+    .section {padding: 40px 8%; text-align: center;} /* Reduzi o padding */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Minmax menor */
+      gap: 15px; /* Reduzi o gap */
+      margin-top: 15px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {transform: translateY(-5px); background: rgba(255,255,255,1);}
+    .card i {font-size: 1.8rem; color: #0077ff; margin-bottom: 8px;}
+
+    /* -------- CONTATO -------- */
+    .socials {margin-top: 15px;}
+    .socials a {
+      font-size: 1.8rem; /* Reduzi o tamanho do ícone */
+      margin: 0 8px; /* Reduzi a margem */
+      transition: transform 0.3s;
+    }
+    .socials a:hover {transform: scale(1.2);}
+
+    /* -------- AVALIAÇÃO -------- */
+    .qr img {width: 100px; margin-top: 10px;} /* Reduzi a imagem do QR */
+    .reviews {margin-top: 15px;}
+    .reviews p {font-size: 0.9rem; margin: 4px 0;}
+
+    /* -------- RODAPÉ -------- */
+    footer {
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 0.8rem; /* Reduzi o tamanho da fonte */
+    }
+
+    /* -------- BOTÃO FLUTUANTE WHATSAPP -------- */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 15px; /* Ajustei a posição */
+      right: 15px;
+      background: #25D366;
+      color: #fff;
+      padding: 10px; /* Reduzi o padding */
+      border-radius: 50%;
+      font-size: 1.5rem; /* Reduzi o ícone */
+      box-shadow: 0 4px 10px rgba(41, 41, 41, 0.938);
+      transition: transform 0.3s;
+    }
+    .floating-whatsapp:hover {transform: scale(1.1);}
+
+    /* -------- DARK MODE -------- */
     body.dark {
       background: #0a0a0a;
       color: #e0e0e0;
     }
-    body.dark .header {
-      background: rgba(30, 30, 30, 0.9);
-    }
-    body.dark .header-title h2 {
-      color: #e0e0e0;
-    }
-
-    /* RESPONSIVIDADE */
-    @media (max-width: 768px) {
+    body.dark .header {background: rgba(41, 41, 41, 0.938);}
+    body.dark .card {background: rgba(41, 41, 41, 0.938);}
+    body.dark footer {background: rgba(41, 41, 41, 0.938);}
+    
+    /* -------- MEDIA QUERIES PARA TELAS MAIORES (Ajuste para desktops) -------- */
+    @media (min-width: 768px) {
       .header {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 15px 8%;
       }
-      .header-left {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      .logo {
+        height: 60px;
       }
-      .header-title h2 {
+      nav a {
         font-size: 1rem;
+        margin: 0 15px;
       }
       .hero {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* Volta a ser linha em telas maiores */
+        text-align: left;
+        padding: 60px 8%;
+      }
+      .hero-text h2 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
       }
       .hero-text p {
         font-size: 1.1rem;
+        margin-bottom: 15px;
+      }
+      .section {padding: 50px 8%;}
+      .cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      .card i {font-size: 2rem;}
+      .socials a {font-size: 2rem;}
+      .qr img {width: 120px;}
+      footer {font-size: 0.9rem;}
+      .floating-whatsapp {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 <body>
   <header class="header">
-    <div class="header-left">
-      <img src="logo.png" alt="Logo Luccel Infotec" class="logo" />
-      <div class="header-title">
-        <h2>Assistência Técnica de Informática Especializada</h2>
-      </div>
-    </div>
+    <img src="logo.png" alt="Logo Luccel Infotec" class="logo" />
     <nav>
       <a href="#servicos">Serviços</a>
       <a href="#contato">Contato</a>
@@ -141,7 +198,8 @@
 
   <section class="hero">
     <div class="hero-text">
-      <p>Seu PC no nível máximo! Manutenção avançada, upgrades de alta performance e suporte técnico de confiança.</p>
+      <h2>Assistência Técnica de Informática Especializada</h2>
+      <p>Seu PC no nível máximo! Manutenção avançada, upgrades de alta performance e suporte técnico de confiança.</p> 
       <a class="btn-whatsapp" href="https://wa.me/5551997909919" target="_blank">
         <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
       </a>
@@ -151,9 +209,54 @@
     </div>
   </section>
 
+  <section class="section" id="servicos">
+    <h3>Nossos Serviços</h3>
+    <div class="cards">
+      <div class="card"><i class="fas fa-tools"></i><p>🪛 Manutenção preventiva e corretiva</p></div>
+      <div class="card"><i class="fas fa-database"></i><p>💾 Backup e recuperação de dados</p></div>
+      <div class="card"><i class="fas fa-lock"></i><p>🔏 Instalação e formatação de sistemas</p></div>
+      <div class="card"><i class="fas fa-rocket"></i><p>🚀 Otimização de performance GAMER</p></div>
+      <div class="card"><i class="fas fa-brain"></i><p>🧠 Diagnóstico avançado de hardware/software</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="contato">
+    <h3>Siga!</h3>
+    <p>Acompanhe novidades nas nossas redes:</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/lcclinfotec" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5551997909919" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@lcclinfotec?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </section>
+
+  <section class="section" id="avaliacao">
+    <h3>Avalie Nosso Atendimento</h3>
+    <p>Clique no QR Code e deixe sua avaliação no nosso perfil Google!:</p>
+    <div class="qr">
+      <a href="https://g.page/r/CVB2fja9AgOqEAE/review" target="_blank">
+        <img src="gqr.png" alt="QR Code de Avaliação" />
+      </a>
+    </div>
+    <div class="reviews">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>“Excelente atendimento, resolveu meu problema no mesmo dia!”</p>
+      <p>“Serviço impecável, recomendo muito!”</p>
+      <p>“Serviço de ótima qualidade!”</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Luccel Infotec - Todos os Direitos Reservados</p> 
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/5551997909919" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <script>
-    const hora = new Date().getHours();
-    if (hora >= 18 || hora < 6) {
+    const hour = new Date().getHours();
+    if (hour >= 18 || hour < 6) {
       document.body.classList.add('dark');
     }
   </script>
