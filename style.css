@@ -1,116 +1,268 @@
+/* Reset padrão para todos os elementos */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Poppins',sans-serif;
-  background:#f5f5f5;color:#222;
-  transition:background 0.5s,color 0.5s;
-}
-a{text-decoration:none;color:inherit;}
-img{max-width:100%;}
-p{text-align:center;}
 
+/* Estilos gerais do corpo da página */
+body{
+  font-family:'Montserrat', sans-serif; /* Nova fonte principal para o corpo do texto */
+  background:#f5f5f5;
+  color:#222;
+  transition:background 0.5s,color 0.5s;
+  line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+}
+a{text-decoration:none;color:inherit;} /* Links sem sublinhado, mantendo a cor do texto pai */
+img{max-width:100%;height:auto;} /* Imagens responsivas */
+p{text-align:center;margin-bottom:10px;} /* Centralizando parágrafos e adicionando margem inferior */
+
+/* Estilo para os títulos das seções */
+h2, h3 {
+  font-family:'Poppins', sans-serif; /* Nova fonte para títulos e destaques */
+  color:#0056b3; /* Um tom de azul mais profundo para os títulos */
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-transform: uppercase; /* Deixando os títulos em caixa alta */
+}
+
+/* Textos centralizados e destacados nas seções específicas (mantido e aprimorado) */
 #contato p, #avaliacao p {
   text-align: center;
   width: 100%;
-  margin-bottom: 20px;
-  font-size: 1.3rem;
-  font-weight: bold;
+  margin-bottom: 25px; /* Ajuste na margem */
+  font-size: 1.4rem; /* Um pouco maior para destaque */
+  font-weight: 600; /* Um pouco menos bold para elegância */
   color: #0077ff;
-  text-shadow: 0 0 5px rgba(0, 119, 255, 0.5);
+  text-shadow: 0 0 8px rgba(0, 119, 255, 0.6); /* Sombra mais suave */
 }
 
-@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+/* Animação Fade (mantida) */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 .fade { animation: fadeIn 1.2s ease-in-out; }
 
 /* HEADER */
 .header{
   display:flex;justify-content:space-between;align-items:center;
-  padding:15px 8%;background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(6px);box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  padding:15px 8%;background:rgba(255,255,255,0.95); /* Fundo um pouco mais opaco */
+  backdrop-filter:blur(8px); /* Blur um pouco mais intenso */
+  box-shadow:0 4px 15px rgba(0,0,0,0.15); /* Sombra mais pronunciada */
   position:sticky;top:0;z-index:100;
 }
 .logo-title{
-  display:flex;align-items:center;gap:10px;
+  display:flex;align-items:center;gap:12px; /* Aumentando o espaço entre logo e título */
 }
-.logo{height:55px;}
-.title-header, .hero-text h2, h3 {
-  font-family: 'Orbitron',sans-serif;
-}
+.logo{height:60px;} /* Logo um pouco maior */
 .title-header{
-  font-size:1.2rem;font-weight:700;color:#0077ff;
-  text-shadow:0 0 10px rgba(0,119,255,0.4);
+  font-family:'Poppins',sans-serif; /* Fonte Poppins para o título do header */
+  font-size:1.3rem;
+  font-weight:700;
+  color:#0077ff;
+  text-shadow:0 0 12px rgba(0,119,255,0.5); /* Sombra mais notável */
 }
-nav a{margin:0 10px;font-weight:bold;font-size:0.9rem;transition:color 0.3s;}
-nav a:hover{color:#0077ff;text-shadow:0 0 10px rgba(0,119,255,0.6);}
+nav a{
+  margin:0 12px; /* Ajustando margem dos links de navegação */
+  font-weight:500; /* Peso da fonte mais leve para os links */
+  font-size:1rem;
+  transition:color 0.3s, text-shadow 0.3s;
+}
+nav a:hover{
+  color:#0056b3; /* Cor de hover mais escura */
+  text-shadow:0 0 15px rgba(0,86,179,0.8); /* Sombra de hover mais forte */
+}
 
 /* HERO */
 .hero{
   display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;padding:40px 8%;background:url('bg.png') no-repeat center center;
-  background-size:cover;color:#fff;gap:30px;
+  text-align:center;padding:60px 8%; /* Padding um pouco maior */
+  background:url('bg.png') no-repeat center center;
+  background-size:cover;color:#fff;gap:35px; /* Aumentando o gap */
+  min-height: 70vh; /* Altura mínima para o hero */
 }
-.hero-text h2{font-size:1.8rem;margin-bottom:8px;}
+.hero-text h2{
+  font-family:'Poppins',sans-serif;
+  font-size:2.5rem; /* Título maior */
+  margin-bottom:12px;
+  color:#fff; /* Cor branca para o título do hero */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Sombra mais forte para legibilidade */
+}
 .hero-text p{
-  font-size:1.2rem;
-  margin-bottom:15px;
+  font-size:1.4rem; /* Parágrafo maior */
+  margin-bottom:25px;
   text-align:center;
+  color:#e0e0e0;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 .btn-whatsapp{
-  background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;
-  font-weight:bold;display:inline-flex;align-items:center;gap:8px;transition:background 0.3s;
+  background:#25D366;color:#fff;padding:12px 25px;border-radius:50px;
+  font-weight:bold;display:inline-flex;align-items:center;gap:10px;transition:background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
-.btn-whatsapp:hover{background:#1ebe5d;}
+.btn-whatsapp:hover{
+  background:#1ebe5d;
+  transform: translateY(-3px); /* Efeito sutil ao passar o mouse */
+}
+.hero-image img {
+  border-radius: 15px; /* Bordas arredondadas para a imagem do hero */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Sombra para destaque */
+}
 
 /* SEÇÕES GERAIS */
-.section{padding:40px 8%;text-align:center;}
+.section{padding:50px 8%;text-align:center;} /* Padding maior nas seções */
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;margin-top:15px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); /* Cards um pouco maiores */
+  gap:20px;margin-top:30px; /* Aumentando gap e margem */
 }
 .card{
-  background:rgba(255,255,255,0.8);
-  border-radius:12px;padding:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  background:rgba(255,255,255,0.9); /* Fundo mais opaco */
+  border-radius:15px; /* Bordas mais arredondadas */
+  padding:25px; /* Padding maior */
+  box-shadow:0 6px 18px rgba(0,0,0,0.12); /* Sombra mais suave e elegante */
   transition:transform 0.3s,background 0.3s,box-shadow 0.3s;
   cursor:pointer;
+  display:flex; /* Usando flexbox para organizar conteúdo */
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  min-height: 220px; /* Altura mínima para os cards */
 }
-.card:hover{transform:translateY(-5px);background:rgba(255,255,255,1); box-shadow:0 8px 16px rgba(0,0,0,0.2);}
-.card i{font-size:1.8rem;color:#0077ff;margin-bottom:8px;}
-.card p{margin:5px 0;text-align:center;}
+.card:hover{
+  transform:translateY(-8px); /* Movimento mais pronunciado */
+  background:rgba(255,255,255,1);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2); /* Sombra de hover mais forte */
+}
+.card.active {
+  background: linear-gradient(145deg, #e6f7ff, #b3e0ff); /* Fundo gradiente vibrante ao ativar */
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 119, 255, 0.4); /* Sombra azul para destaque */
+  border: 1px solid #0077ff; /* Borda para visibilidade */
+}
+.card i{
+  font-size:2.2rem; /* Ícones maiores */
+  color:#0077ff;
+  margin-bottom:15px;
+}
+.card p{
+  font-size:1.1rem;
+  margin:10px 0;
+  font-weight: 600; /* Texto do título do card em semi-negrito */
+  color: #333;
+}
 .card-description{
-  display:none;font-size:0.9rem;margin-top:10px;
-  color:#444;text-align:center;
+  display:none;
+  font-size:0.95rem; /* Texto da descrição um pouco maior */
+  margin-top:15px; /* Margem superior para separar do título do card */
+  color:#555;
+  text-align:center;
+  opacity: 0; /* Começa invisível para transição */
+  transition: opacity 0.5s ease-in-out; /* Transição para o texto da descrição */
 }
-.card.active .card-description{display:block;}
+.card.active .card-description{
+  display:block;
+  opacity: 1; /* Torna-se visível ao ativar */
+}
 
 /* CONTATO */
-.socials{margin-top:15px;}
-.socials a{font-size:1.8rem;margin:0 8px;transition:transform 0.3s;}
-.socials a:hover{transform:scale(1.2);}
-.qr img{width:100px;margin-top:10px;}
-.reviews{margin-top:15px;}
-.reviews p{font-size:0.9rem;margin:4px 0;text-align:center;}
+.socials{margin-top:25px;} /* Margem maior */
+.socials a{
+  font-size:2.5rem; /* Ícones sociais maiores */
+  margin:0 12px;
+  transition:transform 0.3s, color 0.3s;
+  color: #444; /* Cor padrão mais suave */
+}
+.socials a:hover{
+  transform:scale(1.3); /* Efeito de escala mais intenso */
+  color:#0077ff; /* Cor azul ao passar o mouse */
+}
+.qr img{width:120px;margin-top:20px;border-radius:10px;box-shadow: 0 4px 10px rgba(0,0,0,0.1);} /* QR Code com bordas e sombra */
+.reviews{margin-top:30px;}
+.reviews p{font-size:1rem;margin:6px 0;text-align:center;color:#444;}
+.reviews p:first-of-type { /* Estilo para as estrelas */
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
 
 /* RODAPÉ */
-footer{background:rgba(0,0,0,0.85);color:#fff;padding:15px;text-align:center;font-size:0.8rem;}
+footer{
+  background:rgba(20,20,20,0.9); /* Fundo mais escuro e opaco */
+  color:#e0e0e0; /* Texto mais claro */
+  padding:20px; /* Padding maior */
+  text-align:center;
+  font-size:0.9rem;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
 
 /* BOTÃO FLUTUANTE */
 .floating-whatsapp{
-  position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;
-  padding:10px;border-radius:50%;font-size:1.5rem;box-shadow:0 4px 10px rgba(41,41,41,0.938);
-  transition:transform 0.3s;
+  position:fixed;bottom:25px;right:25px; /* Posição um pouco mais afastada */
+  background:#25D366;color:#fff;
+  padding:15px; /* Padding maior para o botão */
+  border-radius:50%;font-size:1.8rem; /* Tamanho do ícone maior */
+  box-shadow:0 6px 15px rgba(37,211,102,0.6); /* Sombra mais colorida */
+  transition:transform 0.3s, background 0.3s;
+  z-index: 99; /* Garante que fique acima de outros elementos */
 }
-.floating-whatsapp:hover{transform:scale(1.1);}
+.floating-whatsapp:hover{
+  transform:scale(1.15) rotate(5deg); /* Efeito de escala e rotação no hover */
+  background:#1DA851; /* Tom um pouco mais escuro no hover */
+}
 
 /* DARK MODE */
-body.dark{background:#0a0a0a;color:#e0e0e0;}
-body.dark .header{background:rgba(41,41,41,0.938);}
-body.dark .card{background:rgba(41,41,41,0.938);}
-body.dark .card-description{color:#e0e0e0;}
-body.dark footer{background:rgba(41,41,41,0.938);}
-  
+body.dark{
+  background:#121212;
+  color:#e0e0e0;
+}
+body.dark .header{
+  background:rgba(30,30,30,0.95);
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+body.dark .card{
+  background:rgba(40,40,40,0.9);
+  box-shadow:0 6px 18px rgba(0,0,0,0.6);
+}
+body.dark .card:hover{
+  background:rgba(50,50,50,1);
+  box-shadow:0 10px 25px rgba(0,0,0,0.8);
+}
+body.dark .card.active {
+  background: linear-gradient(145deg, #3a3a3a, #1a1a1a); /* Gradiente para dark mode */
+  border: 1px solid #0056b3;
+  box-shadow: 0 12px 30px rgba(0, 86, 179, 0.4);
+}
+body.dark .card-description{color:#bbb;}
+body.dark footer{
+  background:rgba(30,30,30,0.9);
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.4);
+}
+body.dark .title-header, body.dark h2, body.dark h3 {
+  color:#00aaff; /* Azul mais claro para dark mode */
+}
+body.dark #contato p, body.dark #avaliacao p {
+  color: #00aaff;
+  text-shadow: 0 0 8px rgba(0, 170, 255, 0.4);
+}
+body.dark .socials a{
+  color: #b3b3b3;
+}
+body.dark .socials a:hover{
+  color: #00aaff;
+}
+
+
+/* Media Queries para Responsividade */
 @media(min-width:768px){
-  .hero{flex-direction:row;text-align:left;padding:60px 8%;}
-  .hero-text h2{font-size:2.2rem;}
-  .hero-text p{font-size:1.3rem; text-align: left; }
+  .hero{flex-direction:row;text-align:left;padding:80px 8%;} /* Padding maior no desktop */
+  .hero-text h2{font-size:3rem;} /* Título do hero maior no desktop */
+  .hero-text p{font-size:1.5rem; text-align: left; }
+  .header{padding:20px 8%;}
+  nav a{margin:0 15px;font-size:1.05rem;}
+}
+
+@media(max-width:767px){
+  .header{flex-direction: column; gap: 10px; padding: 15px 5%;}
+  nav{margin-top: 10px;}
+  nav a{margin: 0 8px;}
+  .hero-image{display: none;} /* Esconde a imagem do hero em telas muito pequenas, se necessário */
+  .cards{grid-template-columns: 1fr;} /* Uma coluna em telas pequenas */
 }
