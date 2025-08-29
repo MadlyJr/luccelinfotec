@@ -1,235 +1,233 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Assistência Técnica em Informática Especializada em Performance Gamer.">
-  <meta name="keywords" content="assistência técnica, gamer, manutenção de computadores, Luccel Infotec, suporte técnico">
-  <meta name="author" content="Luccel Infotec">
-  <title>Luccel Infotec</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{
-      font-family:'Orbitron',sans-serif;
-      background:#f5f5f5;color:#222;
-      transition:background 0.5s,color 0.5s;
-    }
-    a{text-decoration:none;color:inherit;}
-    img{max-width:100%;}
-    p{text-align:justify;}
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Assistência Técnica em Informática - Especializada.">
+  <meta name="keywords" content="assistência técnica, gamer, manutenção de computadores, Luccel Infotec, suporte técnico">
+  <meta name="author" content="Luccel Infotec">
+  <title>Luccel Infotec</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif; /* Fonte secundária para texto */
+      background:#f5f5f5;color:#222;
+      transition:background 0.5s,color 0.5s;
+    }
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;}
+    p{text-align:center;} /* Centralizando os parágrafos */
 
-    /* Textos centralizados e destacados nas seções específicas */
-    #contato p, #avaliacao p {
-      text-align: center;
-      width: 100%;
-      margin-bottom: 20px;
-      font-size: 1.3rem;       /* maior destaque */
-      font-weight: bold;        /* negrito */
-      color: #0077ff;           /* azul vibrante */
-      text-shadow: 0 0 5px rgba(0, 119, 255, 0.5); /* leve sombra */
-    }
+    #contato p, #avaliacao p {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #0077ff;
+      text-shadow: 0 0 5px rgba(0, 119, 255, 0.5);
+    }
 
-    /* Animação Fade */
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    .fade { animation: fadeIn 1.2s ease-in-out; }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    .fade { animation: fadeIn 1.2s ease-in-out; }
 
-    /* HEADER */
-    .header{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:15px 8%;background:rgba(255,255,255,0.85);
-      backdrop-filter:blur(6px);box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      position:sticky;top:0;z-index:100;
-    }
-    .logo-title{
-      display:flex;align-items:center;gap:10px;
-    }
-    .logo{height:55px;}
-    .title-header{
-      font-size:1.2rem;font-weight:700;color:#0077ff;
-      text-shadow:0 0 10px rgba(0,119,255,0.4);
-    }
-    nav a{margin:0 10px;font-weight:bold;font-size:0.9rem;transition:color 0.3s;}
-    nav a:hover{color:#0077ff;text-shadow:0 0 10px rgba(0,119,255,0.6);}
+    /* HEADER */
+    .header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:15px 8%;background:rgba(255,255,255,0.85);
+      backdrop-filter:blur(6px);box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      position:sticky;top:0;z-index:100;
+    }
+    .logo-title{
+      display:flex;align-items:center;gap:10px;
+    }
+    .logo{height:55px;}
+    .title-header, .hero-text h2, h3 { /* Aplicando a fonte Orbitron apenas nos títulos */
+      font-family: 'Orbitron',sans-serif;
+    }
+    .title-header{
+      font-size:1.2rem;font-weight:700;color:#0077ff;
+      text-shadow:0 0 10px rgba(0,119,255,0.4);
+    }
+    nav a{margin:0 10px;font-weight:bold;font-size:0.9rem;transition:color 0.3s;}
+    nav a:hover{color:#0077ff;text-shadow:0 0 10px rgba(0,119,255,0.6);}
 
-    /* HERO */
-    .hero{
-      display:flex;flex-direction:column;justify-content:center;align-items:center;
-      text-align:center;padding:40px 8%;background:url('bg.png') no-repeat center center;
-      background-size:cover;color:#fff;gap:30px;
-    }
-    .hero-text h2{font-size:1.8rem;margin-bottom:8px;}
-    .hero-text p{
-      font-size:1.2rem;
-      margin-bottom:15px;
-      text-align:justify;
-    }
-    .btn-whatsapp{
-      background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;
-      font-weight:bold;display:inline-flex;align-items:center;gap:8px;transition:background 0.3s;
-    }
-    .btn-whatsapp:hover{background:#1ebe5d;}
+    /* HERO */
+    .hero{
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;padding:40px 8%;background:url('bg.png') no-repeat center center;
+      background-size:cover;color:#fff;gap:30px;
+    }
+    .hero-text h2{font-size:1.8rem;margin-bottom:8px;}
+    .hero-text p{
+      font-size:1.2rem;
+      margin-bottom:15px;
+      text-align:center; /* Centralizando o parágrafo da hero */
+    }
+    .btn-whatsapp{
+      background:#25D366;color:#fff;padding:10px 20px;border-radius:50px;
+      font-weight:bold;display:inline-flex;align-items:center;gap:8px;transition:background 0.3s;
+    }
+    .btn-whatsapp:hover{background:#1ebe5d;}
 
-    /* SEÇÕES GERAIS */
-    .section{padding:40px 8%;text-align:center;}
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:15px;margin-top:15px;
-    }
-    .card{
-      background:rgba(255,255,255,0.8);
-      border-radius:12px;padding:15px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-      transition:transform 0.3s,background 0.3s;
-      cursor:pointer;
-    }
-    .card:hover{transform:translateY(-5px);background:rgba(255,255,255,1);}
-    .card i{font-size:1.8rem;color:#0077ff;margin-bottom:8px;}
-    .card p{margin:5px 0;text-align:center;}
-    .card-description{
-      display:none;font-size:0.9rem;margin-top:10px;
-      color:#444;text-align:justify;
-    }
-    .card.active .card-description{display:block;}
+    /* SEÇÕES GERAIS */
+    .section{padding:40px 8%;text-align:center;}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px;margin-top:15px;
+    }
+    .card{
+      background:rgba(255,255,255,0.8);
+      border-radius:12px;padding:15px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      transition:transform 0.3s,background 0.3s,box-shadow 0.3s; /* Adicionando transição de sombra */
+      cursor:pointer;
+    }
+    .card:hover{transform:translateY(-5px);background:rgba(255,255,255,1); box-shadow:0 8px 16px rgba(0,0,0,0.2);} /* Sombra melhorada */
+    .card i{font-size:1.8rem;color:#0077ff;margin-bottom:8px;}
+    .card p{margin:5px 0;text-align:center;}
+    .card-description{
+      display:none;font-size:0.9rem;margin-top:10px;
+      color:#444;text-align:center; /* Centralizando o texto da descrição */
+    }
+    .card.active .card-description{display:block;}
 
-    /* CONTATO */
-    .socials{margin-top:15px;}
-    .socials a{font-size:1.8rem;margin:0 8px;transition:transform 0.3s;}
-    .socials a:hover{transform:scale(1.2);}
-    .qr img{width:100px;margin-top:10px;}
-    .reviews{margin-top:15px;}
-    .reviews p{font-size:0.9rem;margin:4px 0;text-align:center;}
+    /* CONTATO */
+    .socials{margin-top:15px;}
+    .socials a{font-size:1.8rem;margin:0 8px;transition:transform 0.3s;}
+    .socials a:hover{transform:scale(1.2);}
+    .qr img{width:100px;margin-top:10px;}
+    .reviews{margin-top:15px;}
+    .reviews p{font-size:0.9rem;margin:4px 0;text-align:center;}
 
-    /* RODAPÉ */
-    footer{background:rgba(0,0,0,0.85);color:#fff;padding:15px;text-align:center;font-size:0.8rem;}
+    /* RODAPÉ */
+    footer{background:rgba(0,0,0,0.85);color:#fff;padding:15px;text-align:center;font-size:0.8rem;}
 
-    /* BOTÃO FLUTUANTE */
-    .floating-whatsapp{
-      position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;
-      padding:10px;border-radius:50%;font-size:1.5rem;box-shadow:0 4px 10px rgba(41,41,41,0.938);
-      transition:transform 0.3s;
-    }
-    .floating-whatsapp:hover{transform:scale(1.1);}
+    /* BOTÃO FLUTUANTE */
+    .floating-whatsapp{
+      position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;
+      padding:10px;border-radius:50%;font-size:1.5rem;box-shadow:0 4px 10px rgba(41,41,41,0.938);
+      transition:transform 0.3s;
+    }
+    .floating-whatsapp:hover{transform:scale(1.1);}
 
-    /* DARK MODE */
-    body.dark{background:#0a0a0a;color:#e0e0e0;}
-    body.dark .header{background:rgba(41,41,41,0.938);}
-    body.dark .card{background:rgba(41,41,41,0.938);}
-    body.dark .card-description{color:#fff;}
-    body.dark footer{background:rgba(41,41,41,0.938);}
-
-    @media(min-width:768px){
-      .hero{flex-direction:row;text-align:left;padding:60px 8%;}
-      .hero-text h2{font-size:2.2rem;}
-      .hero-text p{font-size:1.3rem;}
-    }
-  </style>
+    /* DARK MODE */
+    body.dark{background:#0a0a0a;color:#e0e0e0;}
+    body.dark .header{background:rgba(41,41,41,0.938);}
+    body.dark .card{background:rgba(41,41,41,0.938);}
+    body.dark .card-description{color:#e0e0e0;}
+    body.dark footer{background:rgba(41,41,41,0.938);}
+    
+    @media(min-width:768px){
+      .hero{flex-direction:row;text-align:left;padding:60px 8%;}
+      .hero-text h2{font-size:2.2rem;}
+      .hero-text p{font-size:1.3rem; text-align: left; /* Alinhamento à esquerda na versão desktop */ }
+    }
+  </style>
 </head>
 <body>
-  <header class="header fade">
-    <div class="logo-title">
-      <img src="logo.png" alt="Logo Luccel Infotec" class="logo" />
-      <span class="title-header">Assistência Técnica de Informática Especializada</span>
-    </div>
-    <nav>
-      <a href="#servicos">Serviços</a>
-      <a href="#contato">Contato</a>
-      <a href="#avaliacao">Avalie</a>
-    </nav>
-  </header>
+  <header class="header fade">
+    <div class="logo-title">
+      <img src="logo.png" alt="Logo Luccel Infotec" class="logo" />
+      <span class="title-header">Assistência Técnica de Informática Especializada</span>
+    </div>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+      <a href="#avaliacao">Avalie</a>
+    </nav>
+  </header>
 
-  <section class="hero fade">
-    <div class="hero-text">
-      <h2>Seu PC no nível máximo!</h2>
-      <p>Manutenção avançada, upgrades de alta performance e suporte técnico de confiança.</p> 
-      <a class="btn-whatsapp" href="https://wa.me/5551997909919" target="_blank">
-        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
-      </a>
-    </div>
-    <div class="hero-image">
-      <img src="merchan1.gif" alt="Promoções de Serviços" />
-    </div>
-  </section>
+  <section class="hero fade">
+    <div class="hero-text">
+      <h2>Seu PC no nível máximo!</h2>
+      <p>Manutenção avançada, upgrades de alta performance e suporte técnico de confiança.</p> 
+      <a class="btn-whatsapp" href="https://wa.me/5551997909919" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+      </a>
+    </div>
+    <div class="hero-image">
+      <img src="merchan1.gif" alt="Promoções de Serviços" />
+    </div>
+  </section>
 
-  <section class="section fade" id="servicos">
-    <h3>Nossos Serviços</h3>
-    <div class="cards">
-      <div class="card">
-        <i class="fas fa-tools"></i>
-        <p>🪛 Manutenção preventiva e corretiva</p>
-        <div class="card-description">Limpeza interna, troca de pasta térmica, substituição de peças e testes para manter seu computador funcionando perfeitamente.</div>
-      </div>
-      <div class="card">
-        <i class="fas fa-database"></i>
-        <p>💾 Backup e recuperação de dados</p>
-        <div class="card-description">Salvamos seus arquivos importantes e recuperamos dados perdidos com segurança.</div>
-      </div>
-      <div class="card">
-        <i class="fas fa-lock"></i>
-        <p>🔏 Instalação e formatação de sistemas</p>
-        <div class="card-description">Instalação limpa e segura do sistema operacional com todos os drivers e atualizações necessárias.</div>
-      </div>
-      <div class="card">
-        <i class="fas fa-rocket"></i>
-        <p>🚀 Otimização de performance GAMER</p>
-        <div class="card-description">Ajustes de hardware e software para máximo desempenho em jogos, reduzindo travamentos e aumentando FPS.</div>
-      </div>
-      <div class="card">
-        <i class="fas fa-brain"></i>
-        <p>🧠 Diagnóstico avançado de hardware/software</p>
-        <div class="card-description">Análise completa para detectar problemas e sugerir soluções eficazes para seu PC.</div>
-      </div>
-    </div>
-  </section>
+  <section class="section fade" id="servicos">
+    <h3>Nossos Serviços</h3>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-tools"></i>
+        <p>🪛 Manutenção preventiva e corretiva</p>
+        <div class="card-description">Limpeza interna, troca de pasta térmica, substituição de peças e testes para manter seu computador funcionando perfeitamente.</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <p>💾 Backup e recuperação de dados</p>
+        <div class="card-description">Salvamos seus arquivos importantes e recuperamos dados perdidos com segurança.</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-lock"></i>
+        <p>🔏 Instalação e formatação de sistemas</p>
+        <div class="card-description">Instalação limpa e segura do sistema operacional com todos os drivers e atualizações necessárias.</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-rocket"></i>
+        <p>🚀 Otimização de performance GAMER</p>
+        <div class="card-description">Ajustes de hardware e software para máximo desempenho em jogos, reduzindo travamentos e aumentando FPS.</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-brain"></i>
+        <p>🧠 Diagnóstico avançado de hardware/software</p>
+        <div class="card-description">Análise completa para detectar problemas e sugerir soluções eficazes para seu PC.</div>
+      </div>
+    </div>
+  </section>
 
-  <section class="section fade" id="contato">
-    <h3>Siga!</h3>
-    <p>Acompanhe as novidades nas nossas redes!</p>
-    <div class="socials">
-      <a href="https://www.instagram.com/lcclinfotec" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/5551997909919" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.tiktok.com/@lcclinfotec?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
-    </div>
-  </section>
+  <section class="section fade" id="contato">
+    <h3>Siga!</h3>
+    <p>Acompanhe as novidades nas nossas redes!</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/lcclinfotec" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5551997909919" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@lcclinfotec?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </section>
 
-  <section class="section fade" id="avaliacao">
-    <h3>Avalie Nosso Atendimento</h3>
-    <p>Clique no QR Code abaixo, e deixe sua avaliação no nosso perfil Google!</p>
-    <div class="qr">
-      <a href="https://g.page/r/CVB2fja9AgOqEAE/review" target="_blank">
-        <img src="gqr.png" alt="QR Code de Avaliação" />
-      </a>
-    </div>
-    <div class="reviews">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p>“Excelente atendimento, resolveu meu problema no mesmo dia!”</p>
-      <p>“Serviço impecável, recomendo muito!”</p>
-      <p>“Serviço de ótima qualidade!”</p>
-    </div>
-  </section>
+  <section class="section fade" id="avaliacao">
+    <h3>Avalie Nosso Atendimento</h3>
+    <p>Clique no QR Code abaixo, e deixe sua avaliação no nosso perfil Google!</p>
+    <div class="qr">
+      <a href="https://g.page/r/CVB2fja9AgOqEAE/review" target="_blank">
+        <img src="gqr.png" alt="QR Code de Avaliação" />
+      </a>
+    </div>
+    <div class="reviews">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>“Excelente atendimento, resolveu meu problema no mesmo dia!”</p>
+      <p>“Serviço impecável, recomendo muito!”</p>
+      <p>“Serviço de ótima qualidade!”</p>
+    </div>
+  </section>
 
-  <footer class="fade">
-    <p>&copy; 2025 Luccel Infotec - Todos os Direitos Reservados</p> 
-  </footer>
+  <footer class="fade">
+    <p>&copy; 2025 Luccel Infotec - Todos os Direitos Reservados</p> 
+  </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/5551997909919" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <a class="floating-whatsapp" href="https://wa.me/5551997909919" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-  <script>
-    const hour = new Date().getHours();
-    if(hour >= 18 || hour < 6){document.body.classList.add('dark');}
+  <script>
+    const hour = new Date().getHours();
+    if(hour >= 18 || hour < 6){document.body.classList.add('dark');}
 
-    document.querySelectorAll('.card').forEach(card=>{
-      card.addEventListener('click',()=>{
-        card.classList.toggle('active');
-      });
-    });
-  </script>
+    document.querySelectorAll('.card').forEach(card=>{
+      card.addEventListener('click',()=>{
+        card.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
