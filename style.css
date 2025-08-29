@@ -300,26 +300,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* BOTÃO FLUTUANTE */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #25D366;
-    color: #fff;
-    padding: 18px;
-    border-radius: 50%;
-    font-size: 1.8rem;
-    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6);
-    transition: transform 0.3s, background 0.3s;
-    z-index: 100;
-}
-
-.floating-whatsapp:hover {
-    transform: scale(1.15) rotate(5deg);
-    background: #1DA851;
-}
-
 /* DARK MODE */
 body.dark {
     background: #1e1e1e;
@@ -422,3 +402,4 @@ body.dark .socials a:hover {
     .hero-image {
         display: none;
     }
+}
