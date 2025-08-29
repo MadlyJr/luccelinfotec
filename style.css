@@ -11,6 +11,7 @@ body {
     color: #333;
     line-height: 1.6;
     transition: background 0.5s, color 0.5s;
+    scroll-behavior: smooth; /* Habilita a rolagem suave */
 }
 
 a {
@@ -159,8 +160,8 @@ nav a:hover {
 
 .btn-whatsapp:hover {
     background: #1ebe5d;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px) scale(1.05); /* Efeito de pop e movimento */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 20px #25D366; /* Sombra e glow */
 }
 
 .hero-image {
@@ -269,12 +270,13 @@ h3 {
     font-size: 2.2rem;
     margin: 0 15px;
     color: #444;
-    transition: transform 0.3s, color 0.3s;
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
 }
 
 .socials a:hover {
-    transform: scale(1.2);
+    transform: scale(1.2) rotate(5deg);
     color: #0077ff;
+    text-shadow: 0 0 10px rgba(0, 119, 255, 0.7); /* Efeito de brilho */
 }
 
 .qr img {
@@ -352,6 +354,7 @@ body.dark .socials a {
 
 body.dark .socials a:hover {
     color: #66b3ff;
+    text-shadow: 0 0 10px rgba(102, 179, 255, 0.7);
 }
 
 /* RESPONSIVIDADE */
