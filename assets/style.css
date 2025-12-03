@@ -1,0 +1,293 @@
+/* RESET E BASE */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+   font-family:'Orbitron',sans-serif;
+  line-height:1.6;
+  transition:background 0.6s,color 0.6s;
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+}
+
+:root{
+  --bg:#ffffff;
+  --text:#333333;
+  --accent:#0077ff;
+  --accent-2:#00ccff;
+  --muted:#666666;
+  --radius:14px;
+  --base-size:16px;
+  --scale-1:clamp(1rem, 1.1vw, 1.05rem);
+  --scale-2:clamp(1.1rem, 1.6vw, 1.15rem);
+  --scale-3:clamp(1.6rem, 3.6vw, 2.5rem);
+}
+a{text-decoration:none;color:inherit;transition:color .3s,text-shadow .3s;}
+a:hover{color:#0077ff;text-shadow:0 0 8px rgba(0,119,255,0.6);}
+img{max-width:100%;height:auto;display:block;transition:transform .4s;}
+img:hover{transform:scale(1.02);}
+
+/* TEXTO GLOBAL */
+p{
+  margin-bottom:12px;
+  line-height:1.6;
+  font-size:var(--scale-1);
+  color:var(--text);
+  text-align:left;
+}
+
+/* HERO TEXT */
+.hero-text h2,
+.hero-text p,
+.btn-whatsapp {
+  color: #fff;
+  /* sombra discreta para leitura sobre a imagem de fundo */
+  text-shadow: 0 1px 6px rgba(0,0,0,0.55);
+}
+
+.hero-text h2 {
+  font-size: var(--scale-3);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.hero-text p {
+  text-align:justify;
+  font-size:1.3rem;
+  font-weight: 500;
+}
+
+.hero-image {
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARDS TEXTOS */
+.card p{
+  text-align:center;
+  font-weight:600;
+  margin-bottom:10px;
+  font-size:var(--scale-2);
+  line-height:1.25;
+  word-break:keep-all;
+}
+
+.card-title{display:flex;align-items:center;gap:12px;justify-content:center;}
+.card-title i{font-size:1.6rem;color:var(--accent);display:inline-block;}
+
+/* DESCRIÇÃO DOS CARDS (abre só no clique .active) */
+.card-description{
+  text-align:justify;
+  font-size:0.95rem;
+  color:var(--muted);
+  opacity:0;
+  max-height:0;
+  overflow:hidden;
+  transform:translateY(6px);
+  transition:max-height .45s cubic-bezier(.2,.9,.2,1), opacity .35s ease, transform .35s ease;
+  padding-top:6px;
+}
+.card[aria-expanded="true"] .card-description{
+  opacity:1;
+  max-height:420px;
+  transform:translateY(0);
+}
+
+/* SEÇÕES DE CONTATO E AVALIAÇÃO */
+#contato p,#avaliacao p{
+  text-align:center;
+  font-size:1.2rem;
+  font-weight:bold;
+  color:var(--accent);
+}
+
+/* REVIEWS */
+.reviews p{
+  text-align:center;
+  font-size:1rem;
+  font-style:italic;
+  color:#666;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px) scale(0.95);}to{opacity:1;transform:translateY(0) scale(1);}}
+@keyframes gradientMove{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+/* neonPulse removed to avoid heavy glow effects */
+.fade{animation:fadeInUp 1.2s ease-in-out forwards;}
+
+/* HEADER */
+.header{
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:35px 25px;
+  box-shadow:0 6px 18px rgba(0,119,255,0.07);
+  transition:transform .28s cubic-bezier(.2,.9,.25,1), box-shadow .28s ease, border-color .28s ease;
+  cursor:pointer;
+  overflow:hidden;
+  position:relative;
+  user-select:none;
+}
+.card::before{
+  content:'';
+  position:absolute;inset:-2px;border-radius:20px;
+  background:linear-gradient(90deg,#0077ff,#00ccff,#0077ff);
+  background-size:200% 200%;animation:gradientMove 6s linear infinite;z-index:0;opacity:0;transition:opacity .4s, transform .4s;
+}
+.card>*{position:relative;z-index:1;}
+.card:hover::before{opacity:0.9;transform:scale(1.01);}
+.card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 12px 30px rgba(0,119,255,0.08);} 
+.card i{font-size:2.8rem;color:var(--accent);margin-bottom:20px;transition:transform .28s ease, text-shadow .28s ease, opacity .28s ease;}
+.card:hover i{transform:translateY(-2px) scale(1.03);text-shadow:0 0 6px rgba(0,119,255,0.26);} 
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:90px 5% 50px;
+  background: url("bg.png") center center/cover no-repeat;
+  color:#fff;
+  min-height:85vh;
+  position:relative;
+  gap:30px;
+}
+.hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.6);z-index:1;}
+.hero>*{z-index:2;}
+.btn-whatsapp{
+  background:#25D366;
+  color:#fff;
+  padding:12px 28px;
+  border-radius:50px;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:transform .22s ease, box-shadow .22s ease;
+  box-shadow:0 6px 18px rgba(0,0,0,0.16);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.45);
+}
+.btn-whatsapp:hover{
+  background:#1ebe5d;
+  transform:translateY(-4px);
+  box-shadow:0 10px 22px rgba(0,0,0,0.22);
+}
+.hero-image img{border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.4);}
+
+/* SEÇÕES */
+.section{padding:70px 5%;text-align:center;}
+h3{font-size:2.3rem;font-weight:800;color:#0044cc;margin-bottom:45px;text-transform:uppercase;letter-spacing:2px;}
+h3::after{content:'';display:block;margin:12px auto 0;width:60px;height:3px;background:#0077ff;border-radius:2px;box-shadow:0 0 10px rgba(0,119,255,0.7);}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:35px;}
+.card{
+  background:#fff;border-radius:18px;padding:35px 25px;
+  box-shadow:0 0 10px rgba(0,119,255,0.2);transition:all .5s;cursor:pointer;overflow:hidden;position:relative;
+  user-select:none;
+}
+.card::before{
+  content:'';position:absolute;inset:-2px;border-radius:20px;
+  background:linear-gradient(90deg,#0077ff,#00ccff,#0077ff);
+  background-size:200% 200%;animation:gradientMove 6s linear infinite;z-index:0;opacity:0;transition:opacity .4s;
+}
+.card>*{position:relative;z-index:1;}
+.card:hover::before{opacity:1;}
+.card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 0 25px rgba(0,119,255,0.5);}
+.card i{font-size:2.8rem;color:var(--accent);margin-bottom:20px;transition:transform .4s,text-shadow .4s;}
+.card:hover i{transform:scale(1.04) rotate(2deg);text-shadow:0 0 6px rgba(0,119,255,0.35);} 
+
+/* CONTATO / REDES */
+.socials a{font-size:2.4rem;margin:0 15px;color:#444;transition:transform .22s,color .22s;}
+.socials a:hover{transform:scale(1.12) rotate(4deg);color:var(--accent);} 
+.qr img{width:140px;margin:20px auto;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+
+/* RODAPÉ */
+footer {
+  background: #111;
+  color: #ccc;
+  padding: 30px 5%;
+  text-align: center;
+  font-size: 0.95rem;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+}
+
+/* BOTÃO FIXO WHATSAPP */
+.floating-whatsapp{
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  background:#25D366;
+  color:#fff;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  font-size:2rem;
+  box-shadow:0 4px 10px rgba(0,0,0,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .3s;
+  z-index:999;
+}
+.floating-whatsapp:hover{transform:scale(1.1);}
+
+/* DARK MODE */
+body.dark{background:#121212;color:#e0e0e0;}
+body.dark .header{background:rgba(25,25,25,0.95);}
+body.dark .title-header,body.dark h3{color:#66b3ff;}
+body.dark .hero{
+  background: url("bg.png") center center/cover no-repeat;
+}
+body.dark .card{background:#1b1b1b;color:#e0e0e0;box-shadow:0 8px 25px rgba(0,0,0,0.6);}
+body.dark .card::before{background:linear-gradient(90deg,#66b3ff,#00e1ff,#66b3ff);}
+body.dark footer{background:#0a0a0a;color:#aaa;}
+
+/* ACESSIBILIDADE E FOCUS */
+.card:focus-visible{
+  outline:3px solid rgba(0,204,255,0.18);
+  outline-offset:4px;
+  border-radius:20px;
+  box-shadow:0 8px 22px rgba(0,119,255,0.06);
+  transform:translateY(-6px) scale(1.005);
+}
+
+/* Micro-interactions and reduced-motion support */
+@media (prefers-reduced-motion: reduce){
+  .card, .btn-whatsapp, .socials a, .hero-image img{transition:none !important;animation:none !important;}
+}
+
+/* subtle focus/active state for CTA */
+.btn-whatsapp:focus,
+.btn-whatsapp:active{
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* performance hint */
+.card-description{will-change:opacity,transform,max-height;}
+
+/* RESPONSIVO */
+@media(min-width:768px){
+  .hero{flex-direction:row;text-align:left;}
+  .hero-text{width:50%;}
+  .hero-image{width:45%;margin-top:0;}
+  .card p{font-size:var(--scale-2);text-align:left;}
+  .card{padding:28px 30px;}
+  .card-title{justify-content:flex-start;}
+  .card i{margin-right:12px;margin-top:0;}
+  .card>*{position:relative;z-index:1;}
+  .card .card-description{font-size:0.98rem;}
+}
+@media(max-width:767px){
+  .header{flex-direction:column;gap:15px;}
+  h3{font-size:1.7rem;}
+  .hero{min-height:70vh;}
+  .hero-text h2{font-size:2rem;}
+  .card p{font-size:var(--scale-1);text-align:center;}
+}
+
+/* small polish */
+.header{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88));}
+.card{border-radius:var(--radius);}
+.btn-whatsapp{box-shadow:0 8px 30px rgba(37,211,102,0.15);}
