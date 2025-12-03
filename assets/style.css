@@ -1,0 +1,423 @@
+/* RESET E BASE */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+   font-family:'Orbitron',sans-serif;
+  line-height:1.6;
+  transition:background 0.6s,color 0.6s;
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+  width:100%;
+}
+
+:root{
+  --bg:#ffffff;
+  --text:#333333;
+  --accent:#0077ff;
+  --accent-2:#00ccff;
+  --muted:#666666;
+  --radius:14px;
+  --base-size:16px;
+  --scale-1:clamp(1rem, 1.1vw, 1.05rem);
+  --scale-2:clamp(1.1rem, 1.6vw, 1.15rem);
+  --scale-3:clamp(1.6rem, 3.6vw, 2.5rem);
+}
+a{text-decoration:none;color:inherit;transition:color .3s,text-shadow .3s;}
+a:hover{color:#0077ff;text-shadow:0 0 8px rgba(0,119,255,0.6);}
+img{max-width:100%;height:auto;display:block;transition:transform .4s;}
+img:hover{transform:scale(1.02);}
+
+/* TEXTO GLOBAL */
+p{
+  margin-bottom:12px;
+  line-height:1.6;
+  font-size:var(--scale-1);
+  color:var(--text);
+  text-align:left;
+}
+
+/* HERO TEXT */
+.hero-text h2,
+.hero-text p,
+.btn-whatsapp {
+  color: #fff;
+  /* sombra discreta para leitura sobre a imagem de fundo */
+  text-shadow: 0 1px 6px rgba(0,0,0,0.55);
+}
+
+.hero-text h2 {
+  font-size: var(--scale-3);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.hero-text p {
+  text-align:justify;
+  font-size:1.3rem;
+  font-weight: 500;
+  margin-bottom:42px;
+}
+
+.hero-image {
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure the hero image itself respects the container radius and is clipped */
+.hero-image{
+  overflow:hidden;
+}
+.hero-image img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:10px;
+}
+
+/* Improve merchan visibility: a small card behind and subtle lift */
+.merchan-trigger{
+  background:transparent;border:0;padding:0;display:inline-block;cursor:pointer;border-radius:12px;position:relative;overflow:visible;
+}
+.merchan-trigger img{max-width:260px;box-shadow:0 18px 60px rgba(0,0,0,0.5);transform:translateZ(0);display:block;object-fit:cover}
+.merchan-trigger img{transition:transform .28s ease,box-shadow .28s ease}
+.merchan-trigger:hover img{transform:translateY(-6px) scale(1.02);box-shadow:0 28px 80px rgba(0,0,0,0.6)}
+.hero-image::before{content:'';position:absolute;right:calc(6% + 10px);width:280px;height:360px;border-radius:14px;pointer-events:none;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));filter:blur(8px);}
+
+/* Modal fullscreen for merchan (use opacity/visibility for smooth transitions) */
+.merchan-modal{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(6,10,20,0.88);z-index:2000;padding:20px;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .48s ease,visibility .48s ease;
+}
+.merchan-modal.open{opacity:1;visibility:visible;pointer-events:auto}
+.merchan-modal__img{
+  max-width:96%;max-height:96%;border-radius:14px;box-shadow:0 40px 120px rgba(0,0,0,0.7);cursor:zoom-out;
+  transform:scale(.96);opacity:0;transition:transform .52s cubic-bezier(.2,.9,.2,1),opacity .40s ease;
+}
+.merchan-modal.open .merchan-modal__img{transform:scale(1);opacity:1}
+
+/* Close button (X) for modal */
+.merchan-modal__close{
+  position:absolute;top:24px;right:24px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
+  color:#fff;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:1.4rem;transition:all .24s ease;z-index:2001;
+}
+.merchan-modal__close:hover{background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.25);transform:scale(1.08) rotate(90deg)}
+.merchan-modal__close:active{transform:scale(0.95)}
+.merchan-modal__close:focus-visible{outline:2px solid rgba(110,200,255,0.5);outline-offset:2px}
+
+@keyframes modalZoomIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+
+
+/* Header redesign: futuristic, thin and refined */
+.header{
+  background:linear-gradient(180deg, rgba(10,12,18,0.55), rgba(6,8,12,0.35));
+  backdrop-filter: blur(6px) saturate(120%);
+  border-radius:12px;box-shadow:0 8px 40px rgba(2,6,23,0.35);
+}
+.logo{height:34px}
+.title-header{font-weight:600;letter-spacing:0.8px;color:#dfeeff}
+nav a{border-radius:8px;padding:8px 12px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:#cfe8ff}
+nav a:hover{background:linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.06));border-color:rgba(110,200,255,0.18);transform:translateY(-3px)}
+
+/* Prevent any accidental horizontal overflow from long text */
+*{max-width:100%;box-sizing:border-box}
+
+/* CARDS TEXTOS */
+.card p{
+  text-align:center;
+  font-weight:600;
+  margin-bottom:10px;
+  font-size:var(--scale-2);
+  line-height:1.25;
+  word-break:keep-all;
+}
+
+.card-title{display:flex;flex-direction:column;align-items:center;gap:8px;justify-content:center;}
+.card-title i{font-size:2rem;color:var(--accent);display:block;margin:0;}
+
+/* DESCRIÇÃO DOS CARDS (abre só no clique .active) */
+.card-description{
+  text-align:justify;
+  font-size:0.95rem;
+  color:var(--muted);
+  opacity:0;
+  max-height:0;
+  overflow:hidden;
+  transform:translateY(6px);
+  transition:max-height .45s cubic-bezier(.2,.9,.2,1), opacity .35s ease, transform .35s ease;
+  padding-top:6px;
+}
+.card[aria-expanded="true"] .card-description{
+  opacity:1;
+  max-height:420px;
+  transform:translateY(0);
+}
+
+/* SEÇÕES DE CONTATO E AVALIAÇÃO */
+#contato p,#avaliacao p{
+  text-align:center;
+  font-size:1.2rem;
+  font-weight:bold;
+  color:var(--accent);
+}
+
+/* REVIEWS */
+.reviews p{
+  text-align:center;
+  font-size:1rem;
+  font-style:italic;
+  color:#666;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px) scale(0.95);}to{opacity:1;transform:translateY(0) scale(1);}}
+@keyframes gradientMove{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+/* neonPulse removed to avoid heavy glow effects */
+.fade{animation:fadeInUp 1.2s ease-in-out forwards;}
+
+/* HERO */
+.hero{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  text-align:left;
+  padding:120px 6% 80px;
+  background: url("bg.png") center center/cover no-repeat;
+  background-size:cover;
+  color:#fff;
+  min-height:100vh;
+  position:relative;
+}
+
+/* SEÇÕES */
+.section{padding:100px 5%;text-align:center;}
+h3{font-size:2.3rem;font-weight:800;color:#0044cc;margin-bottom:45px;text-transform:uppercase;letter-spacing:2px;}
+h3::after{content:'';display:block;margin:15px auto 0;width:60px;height:3px;background:#0077ff;border-radius:2px;box-shadow:0 0 10px rgba(0,119,255,0.7);}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:35px;}
+.card{
+  background:#fff;border-radius:18px;padding:35px 25px;
+  box-shadow:0 0 10px rgba(0,119,255,0.2);transition:all .5s;cursor:pointer;overflow:hidden;position:relative;
+  user-select:none;
+}
+.card::before{
+  content:'';position:absolute;inset:-2px;border-radius:20px;
+  background:linear-gradient(90deg,#0077ff,#00ccff,#0077ff);
+  background-size:200% 200%;animation:gradientMove 6s linear infinite;z-index:0;opacity:0;transition:opacity .4s;
+}
+.card>*{position:relative;z-index:1;}
+.card:hover::before{opacity:1;}
+.card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 0 25px rgba(0,119,255,0.5);}
+.card i{font-size:2.8rem;color:var(--accent);margin-bottom:20px;transition:transform .4s,text-shadow .4s;}
+.card:hover i{transform:scale(1.04) rotate(2deg);text-shadow:0 0 6px rgba(0,119,255,0.35);} 
+
+/* CONTATO / REDES */
+.socials a{font-size:2.4rem;margin:0 15px;color:#444;transition:transform .22s,color .22s;}
+.socials a:hover{transform:scale(1.12) rotate(4deg);color:var(--accent);} 
+.qr img{width:140px;margin:20px auto;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
+
+/* RODAPÉ */
+footer {
+  background: #111;
+  color: #ccc;
+  padding: 30px 5%;
+  text-align: center;
+  font-size: 0.95rem;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+}
+
+/* DARK MODE */
+body.dark{background:#121212;color:#e0e0e0;}
+body.dark .header{background:rgba(25,25,25,0.95);}
+body.dark .title-header,body.dark h3{color:#66b3ff;}
+body.dark .hero{
+  background: url("bg.png") center center/cover no-repeat;
+}
+body.dark .card{background:#1b1b1b;color:#e0e0e0;box-shadow:0 8px 25px rgba(0,0,0,0.6);}
+body.dark .card::before{background:linear-gradient(90deg,#66b3ff,#00e1ff,#66b3ff);}
+body.dark footer{background:#0a0a0a;color:#aaa;}
+
+/* ACESSIBILIDADE E FOCUS */
+.card:focus-visible{
+  outline:3px solid rgba(0,204,255,0.18);
+  outline-offset:4px;
+  border-radius:20px;
+  box-shadow:0 8px 22px rgba(0,119,255,0.06);
+  transform:translateY(-6px) scale(1.005);
+}
+
+/* Micro-interactions and reduced-motion support */
+@media (prefers-reduced-motion: reduce){
+  .card, .btn-whatsapp, .socials a, .hero-image img{transition:none !important;animation:none !important;}
+}
+
+/* subtle focus/active state for CTA */
+.btn-whatsapp:focus,
+.btn-whatsapp:active{
+  transform:translateY(-2px);
+  box-shadow:0 12px 32px rgba(37,211,102,0.32);
+  border-color:#0d7a39;
+}
+.btn-whatsapp:hover{
+  background:linear-gradient(135deg, #1faa50, #158c3f);
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(37,211,102,0.32);
+  border-color:#0d7a39;
+}
+
+/* performance hint */
+.card-description{will-change:opacity,transform,max-height;}
+
+/* RESPONSIVO */
+@media(min-width:768px){
+  .hero{flex-direction:row;text-align:left;}
+  .hero-text{width:50%;}
+  .hero-image{width:45%;margin-top:0;}
+  .card p{font-size:var(--scale-2);text-align:center;}
+  .card{padding:28px 30px;}
+  .card-title{flex-direction:column;justify-content:center;}
+  .card-title i{margin-right:0;margin-top:0;}
+  .card>*{position:relative;z-index:1;}
+  .card .card-description{font-size:0.98rem;}
+}
+@media(max-width:767px){
+  .header{flex-direction:column;gap:15px;}
+  h3{font-size:1.7rem;}
+  .hero{min-height:70vh;}
+  .hero-text h2{font-size:2rem;}
+  .card p{font-size:var(--scale-1);text-align:center;}
+}
+
+/* small polish */
+.header{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88));}
+.card{border-radius:var(--radius);}
+.btn-whatsapp{box-shadow:0 8px 30px rgba(37,211,102,0.15); border:2px solid #0fa651; background:linear-gradient(135deg, #25D366, #1faa50); padding:14px 30px; border-radius:50px;}
+
+/* --- Modern header, hero and controls overrides (placed at end to override above) --- */
+/* Header: small logo to left, transparent over hero */
+.header{
+  position:fixed;
+  top:16px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  width:100%;
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:transparent;
+  z-index:140;
+  transition:background .28s ease,transform .28s ease, padding .28s ease;
+  min-height:64px;
+}
+.logo-title{display:flex;align-items:center;gap:10px;padding:0;}
+.logo{height:36px;flex-shrink:0;}
+.title-header{font-size:0.95rem;color:#fff;font-weight:700;letter-spacing:0.6px;text-shadow:0 1px 6px rgba(0,0,0,0.45);white-space:nowrap;}
+
+/* Nav as bordered buttons, spaced and aligned */
+nav{display:flex;gap:10px;align-items:center;flex-wrap:nowrap;}
+nav a{color:#fff;padding:8px 14px;border:1px solid rgba(255,255,255,0.12);border-radius:10px;margin:0 4px;transition:all .16s ease;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:0.95rem;white-space:nowrap;}
+nav a:hover{transform:translateY(-3px);background:rgba(255,255,255,0.04);border-color:var(--accent-2);box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+
+/* Hero: extend bg across first viewport and create breathing space under fixed header */
+.hero{min-height:100vh;padding:120px 6% 80px;background-size:cover;background-position:center center}
+.hero-text{max-width:640px}
+
+/* Floating WhatsApp: hidden by default; will be enabled on small screens (bottom-right) */
+.floating-whatsapp{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:linear-gradient(135deg,#25D366,#16a64a);color:#fff;padding:12px 20px;border-radius:999px;display:none;align-items:center;gap:10px;font-weight:700;box-shadow:0 18px 40px rgba(22,99,47,0.12);z-index:999;transition:transform .18s ease,box-shadow .18s ease}
+.floating-whatsapp:hover{transform:translateX(-50%) translateY(-4px) scale(1.02);box-shadow:0 26px 60px rgba(22,99,47,0.14)}
+.floating-whatsapp .fw-text{display:inline-block}
+
+/* Slight pulse to catch attention (very subtle) */
+.floating-whatsapp::after{content:'';position:absolute;inset:auto auto -6px 50%;width:120%;height:10px;border-radius:50%;filter:blur(10px);transform:translateX(-50%);opacity:0.07}
+
+/* Card modern polish */
+.cards{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
+.card{background:linear-gradient(180deg,#fff,#fbfdff);border-radius:14px;padding:22px;box-shadow:0 12px 32px rgba(8,24,48,0.06);}
+.card-title{font-size:1.02rem;font-weight:700}
+.card-description{color:var(--muted);font-size:0.96rem}
+
+/* ensure readable hero text when header is over it */
+.header + .hero{padding-top:140px}
+
+/* Mobile / in-app browser (Instagram) adjustments */
+/* Use safe-area insets where available and increase spacing so
+   the CTA button is not overlapped by UI chrome */
+.hero{
+  padding-top:calc(120px + env(safe-area-inset-top));
+  padding-bottom:calc(80px + env(safe-area-inset-bottom));
+}
+.header + .hero{
+  padding-top:calc(140px + env(safe-area-inset-top));
+}
+.floating-whatsapp{
+  bottom:calc(22px + env(safe-area-inset-bottom));
+  right:18px;
+  left:auto;
+}
+.hero-text .btn-whatsapp{display:inline-block;margin-top:18px}
+
+@media(max-width:480px){
+  /* tighter layout for small phones and phablets */
+  .hero{padding:100px 5% 90px}
+  .hero-text h2{font-size:2.4rem;line-height:1.06}
+  .hero-text p{font-size:1.08rem;margin-bottom:56px}
+  .btn-whatsapp{padding:12px 18px;font-size:0.98rem}
+  .title-header{font-size:0.95rem}
+  .header{padding:12px 4%}
+  .header + .hero{padding-top:calc(120px + env(safe-area-inset-top))}
+  .floating-whatsapp{right:14px}
+}
+
+@media(max-width:360px){
+  /* Very narrow screens - optimize for Instagram in-app view */
+  .hero{padding:90px 5% 100px}
+  .hero-text h2{font-size:1.9rem;line-height:1.02}
+  .hero-text p{font-size:1rem;margin-bottom:70px}
+  /* hide inline CTA inside hero on very small screens */
+  .btn-whatsapp{display:none}
+  /* show floating fixed CTA bottom-right, respecting safe-area */
+  .floating-whatsapp{display:inline-flex;left:auto;right:14px;transform:none;bottom:calc(14px + env(safe-area-inset-bottom));padding:12px 16px;border-radius:12px}
+  /* hide decorative image to prioritize content */
+  .hero-image{display:none}
+  .title-header{font-size:0.88rem}
+  .header{padding:10px 4%}
+  .header + .hero{padding-top:calc(100px + env(safe-area-inset-top))}
+}
+
+@media(max-width:767px){
+  .header{position:static;padding:12px 5%;}
+  .title-header{color:var(--accent);text-shadow:none}
+  nav a{color:var(--accent);background:transparent;border:1px solid rgba(0,0,0,0.06)}
+  .floating-whatsapp{left:auto;right:18px;transform:none}
+}
+
+/* quando o usuário rolar, aplicamos um fundo mais sólido ao header para leitura */
+.header.scrolled{
+  background:linear-gradient(180deg, rgba(6,10,20,0.92), rgba(6,10,20,0.7));
+  box-shadow:0 8px 30px rgba(2,6,23,0.45);
+  transform:translateY(0);
+}
+
+/* Header shrink state: reduce padding, shrink logo and tighten title */
+.header.shrink{
+  padding:10px 6% !important;
+}
+.header.shrink .logo{
+  height:32px !important;
+}
+.header.shrink .title-header{
+  font-size:0.88rem;
+  opacity:0.98;
+}
+
+/* Smooth transitions for header elements */
+.header, .header .logo, .header .title-header{
+  transition:padding .28s ease, height .28s ease, font-size .22s ease, opacity .22s ease;
+}
