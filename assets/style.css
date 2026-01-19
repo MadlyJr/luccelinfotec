@@ -366,7 +366,7 @@ body.dark footer{background:#0a0a0a;color:#aaa;}
 /* Header: small logo to left, transparent over hero */
 .header{
   position:fixed;
-  top:0;
+  top:max(8px, env(safe-area-inset-top));
   left:0;
   right:0;
   margin:0 auto;
